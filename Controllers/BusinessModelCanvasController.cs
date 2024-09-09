@@ -1,8 +1,6 @@
 ﻿using BMC.API.Models;
 using BMC.API.Repositories.Interface;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 
 namespace BMC.API.Controllers
 {

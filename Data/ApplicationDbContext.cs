@@ -19,7 +19,6 @@ namespace BMC.API.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // Configurar relação muitos-para-muitos entre ApplicationUser e BusinessModelCanvas
             modelBuilder.Entity<UserCanvasAssociation>()
                 .HasKey(uc => new { uc.UserId, uc.CanvasId });
 
@@ -35,15 +34,11 @@ namespace BMC.API.Data
                 .HasForeignKey(uc => uc.CanvasId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Configurar relação entre BusinessModelCanvas e PostIt
             modelBuilder.Entity<PostIt>()
-                .HasOne<BusinessModelCanvas>()  // Tipo da entidade relacionada
-                .WithMany(c => c.PostIts) // BusinessModelCanvas tem muitos PostIts
-                .HasForeignKey(p => p.CanvasId); // Chave estrangeira em PostIt
-
-
-
-            // Ignore a entidade IdentityUserLogin<string> para evitar o erro
+                .HasOne<BusinessModelCanvas>() 
+                .WithMany(c => c.PostIts) 
+                .HasForeignKey(p => p.CanvasId); 
+            
             modelBuilder.Ignore<IdentityUserLogin<string>>();
         }
     }

@@ -1,11 +1,7 @@
 ﻿using BMC.API.Models;
-using BMC.API.Repositories.Interface;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.WebUtilities;
-using System.Security.Claims;
-using System.Text;
 using WebAPI.Models;
 
 namespace WebAPI.Controllers
