@@ -59,7 +59,6 @@ namespace BMC.API.Controllers
                 return NotFound();
             }
 
-            // Aqui você pode acessar o primeiro UserId associado ao BusinessModelCanvas com o canvasId
             var userId = canvas.UserCanvases.FirstOrDefault()?.UserId;
 
             if (userId == null)
@@ -67,7 +66,6 @@ namespace BMC.API.Controllers
                 return NotFound();
             }
 
-            // Retornar o UserId como string
             return Ok(userId);
         }
 
@@ -84,7 +82,6 @@ namespace BMC.API.Controllers
 
             try
             {
-                // Salvando o BusinessModelCanvas sem associar um usuário inicialmente
                 await _businessModelCanvasRepository.AddBusinessModelCanvas(businessModelCanvas);
                 return CreatedAtAction(nameof(GetBusinessModelCanvas), new { id = businessModelCanvas.Id }, businessModelCanvas);
             }

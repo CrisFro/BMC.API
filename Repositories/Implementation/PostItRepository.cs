@@ -33,7 +33,6 @@ namespace BMC.API.Repositories.Implementation
 
         public async Task<IEnumerable<PostIt>> GetPostItsByCanvasAndBlockAsync(int canvasId, BMCBlock block)
         {
-            // Supondo que a entidade PostIt tem propriedades CanvasId e Block
             return await _context.PostIts
                 .Where(p => p.CanvasId == canvasId && p.Block == block)
                 .ToListAsync();

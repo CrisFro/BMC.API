@@ -50,7 +50,7 @@ namespace BMC.API.Controllers
             return Ok(postIt);
         }
 
-        // GET: api/PostIts/Canvas/5/Block/KeyPartners
+        // GET: api/PostIts/Canvas/5/Block/
         [HttpGet("Canvas/{canvasId}/Block/{block}")]
         public async Task<ActionResult<IEnumerable<PostIt>>> GetPostItsByCanvasAndBlock(int canvasId, BMCBlock block)
         {
